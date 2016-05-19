@@ -1,0 +1,137 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper, 11pt]{article} % Font size (can be 10pt, 11pt or 12pt) and paper size (remove a4paper for US letter paper)
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[english]{babel}
+
+\usepackage[
+	backend=biber,
+	bibwarn=true,
+	bibencoding=utf8,
+	sortlocale=en_US,
+	style=authoryear-icomp
+]{biblatex}
+
+\renewcommand{\cite}[2][]{%
+	\ifx&#2&
+		\parentcite{#1}%
+	\else
+		\parencite[#1]{#2}%
+	\fi
+}
+
+\addbibresource{bibliography.bib}
+
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{graphicx} % Required for including pictures
+\usepackage{wrapfig} % Allows in-line images
+\usepackage{csquotes}
+
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc} % Required for accented characters
+\linespread{1.05}
+
+\usepackage{blindtext}
+
+\makeatletter
+\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+
+\renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
+\begin{center} % Right align
+{\LARGE\@title} % Increase the font size of the title
+
+\vspace{50pt} % Some vertical space between the title and author name
+
+{\large\@author} % Author name
+\\\@date % Date
+
+\vspace{40pt} % Some vertical space between the author block and abstract
+\end{center}
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+\title{
+	\textbf{Title here}
+	\\\vspace{1mm}
+	\large Subtitle here
+}
+
+\author{\textsc{Author(s) here} % Author
+%\\{\textit{Interstellar University}}
+} % Institution
+
+\date{\today} % Date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title section
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT AND KEYWORDS
+%----------------------------------------------------------------------------------------
+
+%\renewcommand{\abstractname}{Summary} % change Abstract name if required
+
+\begin{abstract}
+
+\blindtext
+
+\end{abstract}
+
+\hspace*{3,6mm}\textit{Keywords:} lorem, ipsum, dolor, sit amet, lectus % Keywords
+
+\vspace{30pt}
+
+%----------------------------------------------------------------------------------------
+%	ESSAY BODY
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+\blindtext
+
+%------------------------------------------------
+
+\section{Section 1}
+
+\Blindtext
+
+%------------------------------------------------
+
+\section{Section 2}
+
+\Blindtext
+
+%------------------------------------------------
+
+\section{Section 3}
+
+\Blindtext
+
+%------------------------------------------------
+
+\section{Conclusion}
+
+\blindtext
+	
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\pagebreak{}
+
+\printbibliography
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
